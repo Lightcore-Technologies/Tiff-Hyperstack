@@ -1,10 +1,9 @@
 function save_tiff_xyczp_hyperstack(matrix5D, tagstruct, opts)
-    % Create a random 5D matrix for polarization microscopy
+    % Saves a tiff 5D XYCZP hyperstack from the input 5D matrix
     %
     % Inputs:
-    %   * dims: 5D vector of integers, defining the dimensions of the
-    %   matrix [nrows, ncols, nchans, nzplanes, npolar]
-    %   * nbits: number of bytes of the uint 5D matrix
+    %   * matrix5D: 5D matrix to be saved into tiff hyperstack
+    %   * tagstruct: Tiff tag structure
 
     arguments
         matrix5D (:,:,:,:,:)

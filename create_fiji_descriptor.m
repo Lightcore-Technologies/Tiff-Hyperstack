@@ -1,10 +1,13 @@
 function descr = create_fiji_descriptor(dims, nbits)
-    % Create a random 5D matrix for polarization microscopy
+    % Create a Fiji descriptor for a 5D XYCZP matrix
     %
     % Inputs:
     %   * dims: 5D vector of integers, defining the dimensions of the
     %   matrix [nrows, ncols, nchans, nzplanes, npolar]
     %   * nbits: number of bytes of the uint 5D matrix
+    % 
+    % Outputs:
+    %   * descr: Fiji image descriptor (string)
 
     arguments
         dims (1,5) uint32 = [300, 400, 4, 10, 20]

@@ -5,6 +5,9 @@ function M = create_5d_matrix(dims, nbits)
     %   * dims: 5D vector of integers, defining the dimensions of the
     %   matrix [nrows, ncols, nchans, nzplanes, npolar]
     %   * nbits: number of bytes of the uint 5D matrix
+    % 
+    % Outputs:
+    %   * M: 5D random matrix
 
     arguments
         dims (1,5) double = [300, 400, 4, 10, 20]
