@@ -16,21 +16,27 @@ clear all
 dims = [300, 400, 4, 10, 20]; % [nrow, ncol, nchan, nz, npol]
 nbits = 16;
 
+
 %% Create 5D matrix, get Fiji descriptor and get the tiff structure parameters
-M = create_5d_matrix(dims, nbits);
+stack = create_5d_matrix(dims, nbits);
 fiji_descr = create_fiji_descriptor(dims, nbits);
 tagstruct = get_tiff_parameters(dims, nbits);
 
-%% Create 5D hyperstack tiff file
-save_tiff_xyczp_hyperstack(M, tagstruct)
 
+%% Create 5D hyperstack tiff file
+save_tiff_xyczp_hyperstack(stack, tagstruct, 'name','test.tif');
 
 
 %% Read the created hyperstack
-file = 'test';
-ext = '.tif';
+[read_stack, read_dims, read_info] = read_tiff_xyczp_hyperstack('test.tif');
 
-info = imfinfo([file ext]);
-V = tiffreadVolume([file ext]);
-Vp = reshape(V, dims);
-isequal(M,Vp)
+
+%% Sanity check
+bool_dims = isequal(dims, read_dims);
+bool_stack = isequal(stack, read_stack);
+
+fprintf('\nEquality tests (shows 1 if equal):\n')
+fprintf('\t - Dimensions equality = %d\n', bool_dims)
+fprintf('\t - Stack equality = %d\n', bool_stack)
+
+
