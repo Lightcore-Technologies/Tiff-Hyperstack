@@ -13,7 +13,7 @@ clear all
 
 
 %% Setup image parameters
-dims = [nrow, ncol, nchan, nz, npolar]; % [nrow, ncol, nchan, nz, npol]
+dims = [300, 400, 4, 10, 20]; % [nrow, ncol, nchan, nz, npol]
 nbits = 16;
 
 %% Create 5D matrix, get Fiji descriptor and get the tiff structure parameters
@@ -25,3 +25,12 @@ tagstruct = get_tiff_parameters(dims, nbits);
 save_tiff_xyczp_hyperstack(M, tagstruct)
 
 
+
+%% Read the created hyperstack
+file = 'test';
+ext = '.tif';
+
+info = imfinfo([file ext]);
+V = tiffreadVolume([file ext]);
+Vp = reshape(V, dims);
+isequal(M,Vp)
