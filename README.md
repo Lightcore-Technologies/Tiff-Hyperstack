@@ -11,3 +11,17 @@ In this example, the dimensions order is the following: XYCZP, where:
 5. P is the polarization dimension (replacing the defalt time)
 
 Saved hyperstacks tiff files can be easily visualized using Fiji/ImageJ thanks to a dedicated cursor per dimension.
+
+
+## Compatibility
+
+It should be compatible with the polarimetry software of the Cell Morphogenesis lab that can be downloaded [here](https://sites.google.com/view/cell-morphogenesis-lab/polarimetry). This software requires Matlab R2022a Runtime.
+
+The source codes are available here:
+- [Polarimetry](https://github.com/cchandre/Polarimetry)
+- [PolarimetryContour](https://github.com/cchandre/PolarimetryContour)
+
+Typical example stacks can be found here (ask a Lightcore Technologies person to access it):
+[https://lightcoretechnologies.sharepoint.com/:f:/s/www.lightcoreteams.com/EnMm0MwHigdDgazuSyZ3haQB1REjYQo4lzuL2YGK9sCQgg?e=4y6dqN](https://lightcoretechnologies.sharepoint.com/:f:/s/www.lightcoreteams.com/EnMm0MwHigdDgazuSyZ3haQB1REjYQo4lzuL2YGK9sCQgg?e=4y6dqN)
+
+It should also be compatible for quick visualization using [Fiji/ImageJ](https://imagej.net/software/fiji/downloads).
